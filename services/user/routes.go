@@ -24,9 +24,10 @@ func (h *Handler)RegisterRoutes(router *mux.Router){
 	router.HandleFunc("/register",h.HandleLogin).Methods("POST")
 }
 
-func (h *Handler) HandleLogin(w http.ResponseWriter, r *http.Request){
-	
-}
 func (h *Handler) HandleRegister(w http.ResponseWriter, r *http.Request){
 	 
+}
+
+func (h *Handler) HandleLogin(w http.ResponseWriter, r *http.Request){
+	
 }

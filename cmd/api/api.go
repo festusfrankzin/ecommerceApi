@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/festusfrankzin/ecommerceApi/services/products"
 	"github.com/festusfrankzin/ecommerceApi/services/user"
 	"github.com/gorilla/mux"
 )
@@ -36,10 +37,15 @@ func (s *ApiServer) Run ()error{
 	// Creating a subrouter for api version 1
 	subRouter := router.PathPrefix("/api/v1/").Subrouter()
 	
-
+	//UserHandler
 	userHandler := user.Newhandler()
 	userHandler.RegisterRoutes(subRouter)
 
+
+	//ProductsHandler 
+
+	productHandler := products.Newhandler()
+	productHandler.RegisterRoutes(subRouter)
 
 	log.Println("Listening on ", s.address)
 	return http.ListenAndServe(s.address, router)
