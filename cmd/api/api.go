@@ -10,7 +10,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// Creating a struct that takes the address and database
+// Creating a struct that takes the address and database 
 type ApiServer struct { 
 	address string
 	db      *sql.DB
@@ -28,7 +28,7 @@ func CreateApiServer(address string , db * sql.DB) *ApiServer {
 
 }
 // Running the server
-func (s *ApiServer) Run ()error{
+func (s *ApiServer)Run()error{
 
 	// Creating a router using gorilla mux 
 	router := mux.NewRouter()

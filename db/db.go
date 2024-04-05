@@ -18,8 +18,10 @@ func ConnectDB() (*sql.DB, error) {
     port := GetEnv("DB_PORT", "3306")
     dbname := GetEnv("DB_NAME", "EcommerceApi")
 
-    dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", username, password, host, port, dbname)
-    db, err := sql.Open("mysql", dataSourceName)
+    
+	dbPath := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", username, password, host, port, dbname)
+    
+	db, err := sql.Open("mysql", dbPath)
     if err != nil {
         return nil, err
     }

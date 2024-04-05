@@ -4,4 +4,5 @@ Features
 2.    Product Management: CRUD operations for managing products in the store.
 3.    Order Processing: Functionality to create, update, and delete orders.
 4.    Authorization: Role-based access control to manage user permissions.
+5.    Cart Management
 

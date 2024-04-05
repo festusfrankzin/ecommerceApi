@@ -8,6 +8,8 @@ import (
 
 func main() {
 
+
+	// Running the database
 	db, err :=  db.ConnectDB()
     if err != nil {
         log.Fatalf("Error connecting to database: %v", err)
